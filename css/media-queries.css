@@ -1,0 +1,102 @@
+
+@media screen and (min-width:768px) {
+    html{
+        background:black url(../image/koenigsegg.jpg) center center;
+        background-size: cover;
+    }
+    .img-1,.img-2,.img-3{
+        display: none;
+    }
+    .menu{
+        display: block;
+        animation: car-option 3s forwards;       
+    }
+    .top span{
+        display: none;
+    }
+    @keyframes car-option {
+        0%{
+            right:-50%;
+            transition-timing-function:ease-out;
+        }
+        100%{
+            right:5%;
+        }
+    } 
+    button{
+        animation: back-button 5.5s 1;
+    }
+    @keyframes back-button {
+        0%{
+            background-color: rgb(185, 19, 19);
+        }
+        25%{
+            background-color: rgb(185, 19, 19);
+        }
+        100%{
+            background-color: transparent;
+        }
+    }
+    .top h1{
+        animation: left-right 3s forwards;
+    }
+    @keyframes left-right {
+        0%{
+            left: -20%;
+        }
+        100%{
+            left:7%
+        }
+    }
+    .center h2,.center p{
+        animation: left-right2 2.8s 1;
+    }
+    @keyframes left-right2 {
+        0%{
+            left: -40%;
+            transition-timing-function:ease-out
+        }
+        100%{
+            left: 0;
+        }
+    }
+    .specifications{
+        padding: 0% 5%;
+        font-size: 0.9em;
+        color:#080F0F
+    }
+    .specifications img{
+        width:48%;
+        display: inline-block;
+    }
+    .inside img,.Perform img{
+        position: relative;
+        left: 50%;
+    }
+    .text{
+        width: 50%;
+        height: 90%;
+        position: absolute;
+        top: 20%;
+    }
+    .engine .text{
+        left:50%
+    }
+    .aero .text{
+        left: 50%;
+    }
+    .specifications ul li{ 
+        margin: 4% 0;
+        list-style: none;
+    }
+    .side, .side2{
+        padding: 0px 20px;
+        width: 100%;
+        display: block;
+    }
+}
+@media screen and (min-width:850px){
+    .specifications{
+        font-size: 1.1em;
+    }
+}

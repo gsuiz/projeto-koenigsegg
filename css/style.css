@@ -5,58 +5,276 @@
     box-sizing: border-box;
 }
 
-html{
+html{ 
     height: 100%;
-    background:black url(../image/koenigsegg.jpg) center center;
-    background-size:cover ;
+    background-color:black;
+    background-size:cover;
+}       
+@font-face {
+    font-family: eletro;
+    src: url(/font/electr.ttf);
 }
-
+.entrada{
+    width: 100%;
+    height: 100%;
+    background-color: black;    
+    position: absolute;
+    z-index: 9999;
+    color: white;
+    text-align: center;
+    animation: entrada 3s forwards;
+}
+.entrada img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+}
+@keyframes entrada {
+    0%{
+        display:inline-block;
+        opacity: 1;
+    }
+    50%{
+        display: none;
+        opacity: 1;
+        
+    }
+    100%{
+        display: none;
+        opacity: 0;
+        z-index: 0;
+    }
+}
+.img-1,.img-2,.img-3{
+    width: 100%;
+    height: 33.3%;
+    position: absolute;
+    z-index: 1;
+}
+.img-1{
+    background: url(../image/koenigsegg.jpg) center center no-repeat;
+    background-size: cover;
+    animation: car-1 8s forwards;
+}
+.img-2{
+    background: url(../image/koenigsegg2.jpg) center center no-repeat;
+    background-size: cover;
+    top:33.3%;
+    animation: car-2 13s forwards;
+}
+.img-3{
+    background: url(../image/koenigsegg3.jpg) center center no-repeat;
+    background-size: cover;
+    top:66.6%;
+    animation: car-3 15s forwards;
+}
+@keyframes car-1 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes car-2{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes car-3 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 .top{
     width: 100%;
     height: 25%;
     color: white;
     position: relative;
+    z-index: 999;
 }
 
 .top h1{
-    font:bold 3em 'Italianno', cursive;
+    font:italic bold 30px 'eletro', sans-serif;
     position: absolute;
-    top:30%;
+    top:85px;
     left: 7%;
+    color: #69232a;
 }
-.top span{
+span{
+    width: 15vh;
+    height: 200px;
+    text-align: center;
     font-size:28px;
     position:absolute;
-    right: 10%;
-    top: 43%;
+    right: 0%;
+    top: 90px;
+}
+.mobile-list{
+    list-style-type: none;
+    font-size: 2.2vh;
+}
+.mobile-list li{
+    padding:10px 0;
+    color: white;
+    display: none;
+    transition: opacity 1s;
+    opacity: 0;
+}
+span:hover .mobile-list li{
+    opacity: 1;
+    display: block;
+}
+.menu{
+    text-align: right;
+    font:600 1.3em 'raleway', sans-serif;
+    position: absolute;
+    width: 100%;
+    right: 5%;
+    top: 100px;
+    display: none;
+}
+.menu a{
+    text-decoration: none;
+}
+.menu li{
+    display: inline-block;
+    padding: 0 2%;
+    border-bottom: 2px solid transparent;
+    color: rgba(255, 255, 255, 0.61);
+    position: relative;
+}
+.menu a li::after{
+    margin:-2% 10%;
+    content: "";
+    width: 0%;
+    height:2px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.7s;
+}
+.menu a:hover ::after{
+    width: 80%;
 }
 .center{
     width: 100%;
     height: 68%;
     color: white;
     padding: 6%;
+    position: absolute;
+    z-index: 999;
 }
 .center h2{
-    font:bold 2em 'italianno', cursive;
-    padding-bottom: 5%;
+    font:bold 2.5em 'italianno', cursive;
+    padding-bottom: 3vw;
+    position: relative;
+    font-family: 'montserrat',sans-serif;
+    font-size: 2.2em;
 }
 .center p{
     font:300 1em 'raleway', sans-serif;
+    position: relative;
+}
+button a{
+    position: relative;
+    top: 25%;
+    display: block;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    height: 100%;
 }
 
-button{
+button { 
     display: block;
     width: 180px;
     height: 40px;
     border-radius: 40px;
-    border: 2px solid #4c191e/* #009688;*/;
+    border: 2px solid #4c191e;
     background-color: transparent;
     color: white;
     font-weight: 600;
-    margin:40px 0;
+    margin:5vh 0;
+    transition: background-color 0.4s;
+}
+button:hover{
+    background-color: #4c191e;
 }
 footer{
     color: white;
-    font-size: 13px;
-    padding: 0 5%;
+    font-size: 0.7em;
+    padding: 1% 5%;
+    position: absolute;
+}
+
+/* especificações dos carros */
+
+.specifications{
+    width: 100%;
+    position:absolute;
+    top:100%;
+    background-color: white;
+    font-family: 'montserrat';
+    font-size: 0,9em;
+    padding: 10% 0;
+    color: black;
+    animation: telainicial 9s;
+}
+.specifications > div{
+    margin: 5% 0;
+}
+.engine{
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    margin: auto;
+}
+.inside{
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    margin: auto;
+}
+.aero{
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    margin: auto;
+}
+.Perform{
+    position: relative;
+    width: 100%;
+    height: 33.3%;
+    margin: auto;
+}
+.specifications h1{
+    text-align: center;
+    font-size: 1.9em;
+}
+.specifications img{
+    width: 90%;
+    border-radius: 30px;
+    display: block;
+    margin:30px auto;
+    box-shadow:0px 0px 8px rgb(0, 0, 0, 0.6)
+}
+.specifications ul li{ 
+    margin: 6% 0;
+    text-align: center;
+    border-bottom: 1px solid gray;
+}
+.side, .side2{
+    padding: 20px 20px;
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
 }
